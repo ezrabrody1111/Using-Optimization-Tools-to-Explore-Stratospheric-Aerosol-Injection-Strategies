@@ -49,13 +49,11 @@ colorscheme = [ 0  0  0;
                 0 .8  1]; % for plotting the different strategies/scenarios
 
 %% load data
-load('C:\Users\ezrab\Documents\Cornell\Research\MATLAB data\GAUSS.mat');
-load('C:\Users\ezrab\Documents\Cornell\Research\MATLAB data\GAUSS_V_zm.mat');
+load('GAUSS.mat');
+load('GAUSS_V_zm.mat');
 scenarios = {'base','def','15N_15S','30N_30S','30N','30S','15N','15S'};
 
 %% MY standard error
-addpath('C:\Users\ezrab\Documents\Cornell\Research\Code\SAI_optimization_paper-main\SAI_optimization_paper-main')
-
 PE_std_err = calc_std_error(squeeze(mean(reshape(PRECT_base(:,:,97:336,:),288,192,12,20,[]),3))-squeeze(mean(reshape(QFLX_base(:,:,97:336,:),288,192,12,20,[]),3)));
 P_std_err = calc_std_error(squeeze(mean(reshape(PRECT_base(:,:,97:336,:),288,192,12,20,[]),3)));
 T_std_err = calc_std_error(squeeze(mean(reshape(TREFHT_base(:,:,97:336,:),288,192,12,20,[]),3)));
@@ -189,7 +187,7 @@ end
 %inj_rate_arr is 35(years) by 5(strategies)
 % the order of strategies is:
 % 0N_1.0, 15N_15S, 30N_30S, 60N_60S_1.0, Global+1C
-load('C:\Users\ezrab\Documents\Cornell\Research\MATLAB data\yearly_injection_rate.mat')
+load('yearly_injection_rate.mat')
 
 %30S, 15S, 15N, 30N
 injections_def_001 = [0	0.602	0.602	0;
@@ -337,19 +335,6 @@ save('mu_predicted.mat','mu_TREFHT_predicted','mu_PRECT_predicted','mu_QFLX_pred
 area_weight=AREA/sum(AREA,'all');
 rms_T_error = squeeze(sqrt(sum(area_weight.*((mu_TREFHT_predicted(1:288,:)-mean(mu_TREFHT_def(1:288,:,:),3)).^2),[1 2])))
 rms_P_error = squeeze(sqrt(sum(area_weight.*((mu_PRECT_predicted(1:288,:)-mean(mu_PRECT_def(1:288,:,:),3)).^2),[1 2])))
-%% print ensemble-averaged predicted mu values
-%ea_mu_T0_predicted = squeeze(sum(mu_TREFHT_predicted(1:288,:).*AREA,[1 2])/AE)
-ea_mu_T1_predicted = mean(mu_T1_predicted)
-ea_mu_T2_predicted = mean(mu_T2_predicted)
-ea_mu_SSI_predicted
-ea_mu_P0_predicted = squeeze(sum(mu_PRECT_predicted(1:288,:).*AREA,[1 2]))/AE
-ea_mu_ITCZ_predicted = mean(mu_ITCZ_predicted)
-
-ea_mu_T1_def = mean(mu_T1_def)
-ea_mu_T2_def = mean(mu_T2_def)
-ea_mu_SSI_def
-ea_mu_P0_def = squeeze(sum(mean(mu_PRECT_def(1:288,:,:),3).*AREA,[1 2]))/AE
-ea_mu_ITCZ_def = mean(mu_ITCZ_def)
 
 %% create T and P maps for predicted, actual, and difference for multi-objective strategy
 Tmin = -3;
@@ -368,11 +353,7 @@ hold on
 worldmap([-90 90],[-180 180])
 setm(ax1, 'meridianlabel', 'off', 'parallellabel', 'off')
 box on
-%H = ttest2(temporal_mean_TREFHT_R1, temporal_mean_TREFHT_base, 'Dim',3);
-%sH = interp2(lon2,lat,H',slon,slat');
 contourfm(lat,lon2,mu_TREFHT_predicted',T_contours,'LineStyle','none')
-%[II,JJ]=find(~sH');
-%scatterm(slat(JJ),slon(II),1,'k')
 load coastlines
 geoshow(coastlat,coastlon,'Color','k')
 caxis([Tmin Tmax])
@@ -428,7 +409,7 @@ add_abc_tofig(4,0.04,-0.02,12);
 
 % error check
 % temperature
-Z=abs((mu_TREFHT_predicted - mean(mu_TREFHT_def,3))./(2*[T_std_err; T_std_err(1,:)]));
+Z=abs((mu_TREFHT_predicted - mean(mu_TREFHT_def,3))./(2*[T_se; T_se(1,:)]));
 [lon_null,lat_null]=find(Z<1);
 lon_null=(lon_null-1)/287*360;
 lat_null=(lat_null-1)/191*180-90;
@@ -453,7 +434,7 @@ colormap(ax5, T_color_map);
 add_abc_tofig(5,0.04,-0.02,12);
 
 % precip
-Z=abs((mu_PRECT_predicted - mean(mu_PRECT_def,3))./(2*[P_std_err; P_std_err(1,:)]));
+Z=abs((mu_PRECT_predicted - mean(mu_PRECT_def,3))./(2*[P_se; P_se(1,:)]));
 [lon_null,lat_null]=find(Z<1);
 lon_null=(lon_null-1)/287*360;
 lat_null=(lat_null-1)/191*180-90;

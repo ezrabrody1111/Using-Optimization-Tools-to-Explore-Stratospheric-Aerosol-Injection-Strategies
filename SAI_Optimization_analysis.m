@@ -217,7 +217,7 @@ load('mu_predicted.mat')
 %inj_rate_arr is 35(years) by 5(strategies)
 % the order of strategies is:
 % 0N_1.0, 15N_15S, 30N_30S, 60N_60S_1.0, Global+1C
-load('C:\Users\ezrab\Documents\Cornell\Research\MATLAB data\yearly_injection_rate.mat')
+load('yearly_injection_rate.mat')
 
 %30S, 15S, 15N, 30N
 injections_def_001 = [0	0.602	0.602	0;
@@ -343,19 +343,18 @@ ea_inj_30N_30S_end = mean(inj_rate_arr(16:35,3));
 ea_inj_60N_60S_end = mean(inj_rate_arr(16:35,4));
 ea_inj_60N_end = 12;
 
-pathname = '';
-ControlLog_EQ_001 = readmatrix(strcat(pathname, 'SSP245-MA-GAUSS-0N-LOWER-0.5\001\ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_0N_1.0.001.txt'));
-ControlLog_EQ_002 = readmatrix(strcat(pathname, 'SSP245-MA-GAUSS-0N-LOWER-0.5\002\ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_0N_1.0.002.txt'));
-ControlLog_EQ_003 = readmatrix(strcat(pathname, 'SSP245-MA-GAUSS-0N-LOWER-0.5\003\ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_0N_1.0.003.txt'));
-ControlLog_15N_15S_001 = readmatrix(strcat(pathname, 'SSP245-MA-GAUSS-15N_15S-LOWER-0.5\001\ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_15N_15S.001.txt'));
-ControlLog_15N_15S_002 = readmatrix(strcat(pathname, 'SSP245-MA-GAUSS-15N_15S-LOWER-0.5\002\ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_15N_15S.002.txt'));
-ControlLog_15N_15S_003 = readmatrix(strcat(pathname, 'SSP245-MA-GAUSS-15N_15S-LOWER-0.5\003\ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_15N_15S.003.txt'));
-ControlLog_30N_30S_001 = readmatrix(strcat(pathname, 'SSP245-MA-GAUSS-30N_30S-LOWER-0.5\001\ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_30N_30S.001.txt'));
-ControlLog_30N_30S_002 = readmatrix(strcat(pathname, 'SSP245-MA-GAUSS-30N_30S-LOWER-0.5\002\ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_30N_30S.002.txt'));
-ControlLog_30N_30S_003 = readmatrix(strcat(pathname, 'SSP245-MA-GAUSS-30N_30S-LOWER-0.5\003\ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_30N_30S.003.txt'));
-ControlLog_60N_60S_001 = readmatrix(strcat(pathname, 'SSP245-MA-GAUSS-60N_60S-LOWER-0.5\001\ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_60N_60S_1.0.001.txt'));
-ControlLog_60N_60S_002 = readmatrix(strcat(pathname, 'SSP245-MA-GAUSS-60N_60S-LOWER-0.5\002\ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_60N_60S_1.0.002.txt'));
-ControlLog_60N_60S_003 = readmatrix(strcat(pathname, 'SSP245-MA-GAUSS-60N_60S-LOWER-0.5\003\ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_60N_60S_1.0.003.txt'));
+ControlLog_EQ_001 = readmatrix(strcat('ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_0N_1.0.001.txt'));
+ControlLog_EQ_002 = readmatrix(strcat('ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_0N_1.0.002.txt'));
+ControlLog_EQ_003 = readmatrix(strcat('ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_0N_1.0.003.txt'));
+ControlLog_15N_15S_001 = readmatrix(strcat('ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_15N_15S.001.txt'));
+ControlLog_15N_15S_002 = readmatrix(strcat('ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_15N_15S.002.txt'));
+ControlLog_15N_15S_003 = readmatrix(strcat('ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_15N_15S.003.txt'));
+ControlLog_30N_30S_001 = readmatrix(strcat('ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_30N_30S.001.txt'));
+ControlLog_30N_30S_002 = readmatrix(strcat('ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_30N_30S.002.txt'));
+ControlLog_30N_30S_003 = readmatrix(strcat('ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_30N_30S.003.txt'));
+ControlLog_60N_60S_001 = readmatrix(strcat('ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_60N_60S_1.0.001.txt'));
+ControlLog_60N_60S_002 = readmatrix(strcat('ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_60N_60S_1.0.002.txt'));
+ControlLog_60N_60S_003 = readmatrix(strcat('ControlLog_b.e21.BWSSP245.f09_g17.release-cesm2.1.3.WACCM-MA-1deg.feedback_60N_60S_1.0.003.txt'));
 
 inj_def_end = [mean(injections_def_001(16:35,:)); mean(injections_def_002(16:35,:)); mean(injections_def_003(16:35,:))];
 inj_EQ_end = [mean(ControlLog_EQ_001(16:35,9)); mean(ControlLog_EQ_002(16:35,9)); mean(ControlLog_EQ_003(16:35,9))];
@@ -397,7 +396,7 @@ Cmax = 3;
 [contours, color_map] = custom_color_map(Cmin,Cmax,25,'*RdBu');
 
 % TREFHT error check
-Z=abs((ea_temporal_mean_TREFHT_def-ea_temporal_mean_TREFHT_ref)./(2*[T_se_arr; T_se_arr(1,:)]));
+Z=abs((ea_temporal_mean_TREFHT_def-ea_temporal_mean_TREFHT_ref)./(2*[T_se; T_se(1,:)]));
 [lon_null,lat_null]=find(Z<1);
 lon_null=(lon_null-1)/287*360;
 lat_null=(lat_null-1)/191*180-90;
@@ -425,7 +424,7 @@ Cmax = 3;
 [contours, color_map] = custom_color_map(Cmin,Cmax,11,'BrBG');
 
 % TREFHT error check
-Z=abs((ea_temporal_mean_PRECT_def-ea_temporal_mean_PRECT_ref)./(2*[T_se_arr; T_se_arr(1,:)]));
+Z=abs((ea_temporal_mean_PRECT_def-ea_temporal_mean_PRECT_ref)./(2*[P_se; P_se(1,:)]));
 [lon_null,lat_null]=find(Z<1);
 lon_null=(lon_null-1)/287*360;
 lat_null=(lat_null-1)/191*180-90;
@@ -455,7 +454,7 @@ figure('Renderer', 'painters', 'Position', [80 100 1200 700])
 clf
 
 % multi-objective TREFHT error check
-Z=abs((ea_temporal_mean_TREFHT_def-ea_temporal_mean_TREFHT_ref)./(2*[T_se_arr; T_se_arr(1,:)]));
+Z=abs((ea_temporal_mean_TREFHT_def-ea_temporal_mean_TREFHT_ref)./(2*[T_se; T_se(1,:)]));
 [lon_null,lat_null]=find(Z<1);
 lon_null=(lon_null-1)/287*360;
 lat_null=(lat_null-1)/191*180-90;
@@ -481,7 +480,7 @@ Cmax = 3;
 [P_contours, P_color_map] = custom_color_map(Cmin,Cmax,11,'BrBG');
 
 % multi-objective PREFHT error check
-Z=abs((ea_temporal_mean_PRECT_def-ea_temporal_mean_PRECT_ref)./(2*[T_se_arr; T_se_arr(1,:)]));
+Z=abs((ea_temporal_mean_PRECT_def-ea_temporal_mean_PRECT_ref)./(2*[P_se; P_se(1,:)]));
 [lon_null,lat_null]=find(Z<1);
 lon_null=(lon_null-1)/287*360;
 lat_null=(lat_null-1)/191*180-90;
@@ -503,7 +502,7 @@ title('\DeltaP from Reference Period 2050-2069 Multi-Objective');
 colormap(ax2, P_color_map);
 
 % baseline TREFHT error check
-Z=abs((ea_temporal_mean_TREFHT_base-ea_temporal_mean_TREFHT_ref)./(2*[T_se_arr; T_se_arr(1,:)]));
+Z=abs((ea_temporal_mean_TREFHT_base-ea_temporal_mean_TREFHT_ref)./(2*[T_se; T_se(1,:)]));
 [lon_null,lat_null]=find(Z<1);
 lon_null=(lon_null-1)/287*360;
 lat_null=(lat_null-1)/191*180-90;
@@ -527,7 +526,7 @@ colormap(ax3, T_color_map);
 Cmin = -3;
 Cmax = 3;
 % baseline PREFHT error check
-Z=abs((ea_temporal_mean_PRECT_base-ea_temporal_mean_PRECT_ref)./(2*[T_se_arr; T_se_arr(1,:)]));
+Z=abs((ea_temporal_mean_PRECT_base-ea_temporal_mean_PRECT_ref)./(2*[P_se; P_se(1,:)]));
 [lon_null,lat_null]=find(Z<1);
 lon_null=(lon_null-1)/287*360;
 lat_null=(lat_null-1)/191*180-90;
@@ -555,25 +554,31 @@ Cmax = 3;
 
 figure('Renderer', 'painters', 'Position', [20 60 1500 800])
 clf
+
+Z=abs((ea_temporal_mean_TREFHT_def-ea_temporal_mean_TREFHT_ref)./(2*[T_se; T_se(1,:)]));
+[lon_null,lat_null]=find(Z<1);
+lon_null=(lon_null-1)/287*360;
+lat_null=(lat_null-1)/191*180-90;
+
 ax1=subplot(3,3,1); %multi-objective
 ax1.Position = [0.03 0.67 0.28 0.3];
 hold on
 worldmap([-90 90],[-180 180])
 setm(ax1, 'meridianlabel', 'off', 'parallellabel', 'off')
 box on
-%H = ttest2(temporal_mean_TREFHT_R1, temporal_mean_TREFHT_base, 'Dim',3);
-%sH = interp2(lon2,lat,H',slon,slat');
 contourfm(lat,lon2,double(ea_temporal_mean_TREFHT_def')-ea_temporal_mean_TREFHT_ref',contours,'LineStyle','none')
-%[II,JJ]=find(~sH');
-%scatterm(slat(JJ),slon(II),1,'k')
+scatterm(lat_null,lon_null,.2,'k','filled');
 load coastlines
 geoshow(coastlat,coastlon,'Color','k')
 caxis([Cmin Cmax])
-% cb=colorbar;
-% ylabel(cb,'\DeltaK')
 hold off
 title('\DeltaT from Reference Period 2050-2069 Multi-Objective');
 colormap(ax1, color_map);
+
+Z=abs((ea_temporal_mean_TREFHT_EQ-ea_temporal_mean_TREFHT_ref)./(2*[T_se; T_se(1,:)]));
+[lon_null,lat_null]=find(Z<1);
+lon_null=(lon_null-1)/287*360;
+lat_null=(lat_null-1)/191*180-90;
 
 ax2=subplot(3,3,2); %EQ
 ax2.Position = [0.36 0.67 0.28 0.3];
@@ -581,19 +586,19 @@ hold on
 worldmap([-90 90],[-180 180])
 setm(ax2, 'meridianlabel', 'off', 'parallellabel', 'off')
 box on
-%H = ttest2(temporal_mean_TREFHT_R1, temporal_mean_TREFHT_base, 'Dim',3);
-%sH = interp2(lon2,lat,H',slon,slat');
 contourfm(lat,lon2,double(ea_temporal_mean_TREFHT_EQ')-ea_temporal_mean_TREFHT_ref',contours,'LineStyle','none')
-%[II,JJ]=find(~sH');
-%scatterm(slat(JJ),slon(II),1,'k')
+scatterm(lat_null,lon_null,.2,'k','filled');
 load coastlines
 geoshow(coastlat,coastlon,'Color','k')
 caxis([Cmin Cmax])
-% cb=colorbar;
-% ylabel(cb,'\DeltaK')
 hold off
 title('\DeltaT from Reference Period 2050-2069 EQ');
 colormap(ax2, color_map);
+
+Z=abs((ea_temporal_mean_TREFHT_15N_15S-ea_temporal_mean_TREFHT_ref)./(2*[T_se; T_se(1,:)]));
+[lon_null,lat_null]=find(Z<1);
+lon_null=(lon_null-1)/287*360;
+lat_null=(lat_null-1)/191*180-90;
 
 ax3=subplot(3,3,3); %15N-15S
 ax3.Position = [0.69 0.67 0.28 0.3];
@@ -601,19 +606,19 @@ hold on
 worldmap([-90 90],[-180 180])
 setm(ax3, 'meridianlabel', 'off', 'parallellabel', 'off')
 box on
-%H = ttest2(temporal_mean_TREFHT_R1, temporal_mean_TREFHT_base, 'Dim',3);
-%sH = interp2(lon2,lat,H',slon,slat');
 contourfm(lat,lon2,double(ea_temporal_mean_TREFHT_15N_15S')-ea_temporal_mean_TREFHT_ref',contours,'LineStyle','none')
-%[II,JJ]=find(~sH');
-%scatterm(slat(JJ),slon(II),1,'k')
+scatterm(lat_null,lon_null,.2,'k','filled');
 load coastlines
 geoshow(coastlat,coastlon,'Color','k')
 caxis([Cmin Cmax])
-% cb=colorbar;
-% ylabel(cb,'\DeltaK')
 hold off
 title('\DeltaT from Reference Period 2050-2069 15N-15S');
 colormap(ax3, color_map);
+
+Z=abs((ea_temporal_mean_TREFHT_30N_30S-ea_temporal_mean_TREFHT_ref)./(2*[T_se; T_se(1,:)]));
+[lon_null,lat_null]=find(Z<1);
+lon_null=(lon_null-1)/287*360;
+lat_null=(lat_null-1)/191*180-90;
 
 ax4=subplot(3,3,4); %30N-30S
 ax4.Position = [0.03 0.33 0.28 0.3];
@@ -621,19 +626,19 @@ hold on
 worldmap([-90 90],[-180 180])
 setm(ax4, 'meridianlabel', 'off', 'parallellabel', 'off')
 box on
-%H = ttest2(temporal_mean_TREFHT_R1, temporal_mean_TREFHT_base, 'Dim',3);
-%sH = interp2(lon2,lat,H',slon,slat');
 contourfm(lat,lon2,double(ea_temporal_mean_TREFHT_30N_30S')-ea_temporal_mean_TREFHT_ref',contours,'LineStyle','none')
-%[II,JJ]=find(~sH');
-%scatterm(slat(JJ),slon(II),1,'k')
+scatterm(lat_null,lon_null,.2,'k','filled');
 load coastlines
 geoshow(coastlat,coastlon,'Color','k')
 caxis([Cmin Cmax])
-% cb=colorbar;
-% ylabel(cb,'\DeltaK')
 hold off
 title('\DeltaT from Reference Period 2050-2069 30N-30S');
 colormap(ax4, color_map);
+
+Z=abs((ea_temporal_mean_TREFHT_60N_60S-ea_temporal_mean_TREFHT_ref)./(2*[T_se; T_se(1,:)]));
+[lon_null,lat_null]=find(Z<1);
+lon_null=(lon_null-1)/287*360;
+lat_null=(lat_null-1)/191*180-90;
 
 ax5=subplot(3,3,5); %60N-60S
 ax5.Position = [0.36 0.33 0.28 0.3];
@@ -641,19 +646,19 @@ hold on
 worldmap([-90 90],[-180 180])
 setm(ax5, 'meridianlabel', 'off', 'parallellabel', 'off')
 box on
-%H = ttest2(temporal_mean_TREFHT_R1, temporal_mean_TREFHT_base, 'Dim',3);
-%sH = interp2(lon2,lat,H',slon,slat');
 contourfm(lat,lon2,double(ea_temporal_mean_TREFHT_60N_60S')-ea_temporal_mean_TREFHT_ref',contours,'LineStyle','none')
-%[II,JJ]=find(~sH');
-%scatterm(slat(JJ),slon(II),1,'k')
+scatterm(lat_null,lon_null,.2,'k','filled');
 load coastlines
 geoshow(coastlat,coastlon,'Color','k')
 caxis([Cmin Cmax])
-% cb=colorbar;
-% ylabel(cb,'\DeltaK')
 hold off
 title('\DeltaT from Reference Period 2050-2069 60N-60S');
 colormap(ax5, color_map);
+
+Z=abs((ea_temporal_mean_TREFHT_30N-ea_temporal_mean_TREFHT_ref)./(2*[T_se; T_se(1,:)]));
+[lon_null,lat_null]=find(Z<1);
+lon_null=(lon_null-1)/287*360;
+lat_null=(lat_null-1)/191*180-90;
 
 ax6=subplot(3,3,6); %30N
 ax6.Position = [0.69 0.33 0.28 0.3];
@@ -661,31 +666,28 @@ hold on
 worldmap([-90 90],[-180 180])
 setm(ax6, 'meridianlabel', 'off', 'parallellabel', 'off')
 box on
-%H = ttest2(temporal_mean_TREFHT_R1, temporal_mean_TREFHT_base, 'Dim',3);
-%sH = interp2(lon2,lat,H',slon,slat');
 contourfm(lat,lon2,double(ea_temporal_mean_TREFHT_30N')-ea_temporal_mean_TREFHT_ref',contours,'LineStyle','none')
-%[II,JJ]=find(~sH');
-%scatterm(slat(JJ),slon(II),1,'k')
+scatterm(lat_null,lon_null,.2,'k','filled');
 load coastlines
 geoshow(coastlat,coastlon,'Color','k')
 caxis([Cmin Cmax])
-% cb=colorbar;
-% ylabel(cb,'\DeltaK')
 hold off
 title('\DeltaT from Reference Period 2050-2069 30N');
 colormap(ax6, color_map);
 
-ax7=subplot(3,3,7); %30N
+Z=abs((ea_temporal_mean_TREFHT_60N-ea_temporal_mean_TREFHT_ref)./(2*[T_se; T_se(1,:)]));
+[lon_null,lat_null]=find(Z<1);
+lon_null=(lon_null-1)/287*360;
+lat_null=(lat_null-1)/191*180-90;
+
+ax7=subplot(3,3,7); %60N
 ax7.Position = [0.03 0 0.32 0.3];
 hold on
 worldmap([-90 90],[-180 180])
 setm(ax7, 'meridianlabel', 'off', 'parallellabel', 'off')
 box on
-%H = ttest2(temporal_mean_TREFHT_R1, temporal_mean_TREFHT_base, 'Dim',3);
-%sH = interp2(lon2,lat,H',slon,slat');
 contourfm(lat,lon2,double(ea_temporal_mean_TREFHT_60N')-ea_temporal_mean_TREFHT_ref',contours,'LineStyle','none')
-%[II,JJ]=find(~sH');
-%scatterm(slat(JJ),slon(II),1,'k')
+scatterm(lat_null,lon_null,.2,'k','filled');
 load coastlines
 geoshow(coastlat,coastlon,'Color','k')
 caxis([Cmin Cmax])
@@ -702,25 +704,31 @@ Cmax = 3;
 
 figure('Renderer', 'painters', 'Position', [20 60 1500 800])
 clf
+
+Z=abs((ea_temporal_mean_PRECT_def-ea_temporal_mean_PRECT_ref)./(2*[P_se; P_se(1,:)]));
+[lon_null,lat_null]=find(Z<1);
+lon_null=(lon_null-1)/287*360;
+lat_null=(lat_null-1)/191*180-90;
+
 ax1=subplot(3,3,1); %multi-objective
 ax1.Position = [0.03 0.67 0.28 0.3];
 hold on
 worldmap([-90 90],[-180 180])
 setm(ax1, 'meridianlabel', 'off', 'parallellabel', 'off')
 box on
-%H = ttest2(temporal_mean_TREFHT_R1, temporal_mean_TREFHT_base, 'Dim',3);
-%sH = interp2(lon2,lat,H',slon,slat');
 contourfm(lat,lon2,double(ea_temporal_mean_PRECT_def')-ea_temporal_mean_PRECT_ref',contours,'LineStyle','none')
-%[II,JJ]=find(~sH');
-%scatterm(slat(JJ),slon(II),1,'k')
+scatterm(lat_null,lon_null,.2,'k','filled');
 load coastlines
 geoshow(coastlat,coastlon,'Color','k')
 caxis([Cmin Cmax])
-% cb=colorbar;
-% ylabel(cb,'\DeltaK')
 hold off
 title('\Deltaprecip from Reference Period 2050-2069 Multi-Objective');
 colormap(ax1, color_map);
+
+Z=abs((ea_temporal_mean_PRECT_EQ-ea_temporal_mean_PRECT_ref)./(2*[P_se; P_se(1,:)]));
+[lon_null,lat_null]=find(Z<1);
+lon_null=(lon_null-1)/287*360;
+lat_null=(lat_null-1)/191*180-90;
 
 ax2=subplot(3,3,2); %EQ
 ax2.Position = [0.36 0.67 0.28 0.3];
@@ -728,19 +736,19 @@ hold on
 worldmap([-90 90],[-180 180])
 setm(ax2, 'meridianlabel', 'off', 'parallellabel', 'off')
 box on
-%H = ttest2(temporal_mean_TREFHT_R1, temporal_mean_TREFHT_base, 'Dim',3);
-%sH = interp2(lon2,lat,H',slon,slat');
 contourfm(lat,lon2,double(ea_temporal_mean_PRECT_EQ')-ea_temporal_mean_PRECT_ref',contours,'LineStyle','none')
-%[II,JJ]=find(~sH');
-%scatterm(slat(JJ),slon(II),1,'k')
+scatterm(lat_null,lon_null,.2,'k','filled');
 load coastlines
 geoshow(coastlat,coastlon,'Color','k')
 caxis([Cmin Cmax])
-% cb=colorbar;
-% ylabel(cb,'\DeltaK')
 hold off
 title('\Deltaprecip from Reference Period 2050-2069 EQ');
 colormap(ax2, color_map);
+
+Z=abs((ea_temporal_mean_PRECT_15N_15S-ea_temporal_mean_PRECT_ref)./(2*[P_se; P_se(1,:)]));
+[lon_null,lat_null]=find(Z<1);
+lon_null=(lon_null-1)/287*360;
+lat_null=(lat_null-1)/191*180-90;
 
 ax3=subplot(3,3,3); %15N-15S
 ax3.Position = [0.69 0.67 0.28 0.3];
@@ -748,19 +756,19 @@ hold on
 worldmap([-90 90],[-180 180])
 setm(ax3, 'meridianlabel', 'off', 'parallellabel', 'off')
 box on
-%H = ttest2(temporal_mean_TREFHT_R1, temporal_mean_TREFHT_base, 'Dim',3);
-%sH = interp2(lon2,lat,H',slon,slat');
 contourfm(lat,lon2,double(ea_temporal_mean_PRECT_15N_15S')-ea_temporal_mean_PRECT_ref',contours,'LineStyle','none')
-%[II,JJ]=find(~sH');
-%scatterm(slat(JJ),slon(II),1,'k')
+scatterm(lat_null,lon_null,.2,'k','filled');
 load coastlines
 geoshow(coastlat,coastlon,'Color','k')
 caxis([Cmin Cmax])
-% cb=colorbar;
-% ylabel(cb,'\DeltaK')
 hold off
 title('\Deltaprecip from Reference Period 2050-2069 15N-15S');
 colormap(ax3, color_map);
+
+Z=abs((ea_temporal_mean_PRECT_30N_30S-ea_temporal_mean_PRECT_ref)./(2*[P_se; P_se(1,:)]));
+[lon_null,lat_null]=find(Z<1);
+lon_null=(lon_null-1)/287*360;
+lat_null=(lat_null-1)/191*180-90;
 
 ax4=subplot(3,3,4); %30N-30S
 ax4.Position = [0.03 0.33 0.28 0.3];
@@ -768,19 +776,19 @@ hold on
 worldmap([-90 90],[-180 180])
 setm(ax4, 'meridianlabel', 'off', 'parallellabel', 'off')
 box on
-%H = ttest2(temporal_mean_TREFHT_R1, temporal_mean_TREFHT_base, 'Dim',3);
-%sH = interp2(lon2,lat,H',slon,slat');
 contourfm(lat,lon2,double(ea_temporal_mean_PRECT_30N_30S')-ea_temporal_mean_PRECT_ref',contours,'LineStyle','none')
-%[II,JJ]=find(~sH');
-%scatterm(slat(JJ),slon(II),1,'k')
+scatterm(lat_null,lon_null,.2,'k','filled');
 load coastlines
 geoshow(coastlat,coastlon,'Color','k')
 caxis([Cmin Cmax])
-% cb=colorbar;
-% ylabel(cb,'\DeltaK')
 hold off
 title('\Deltaprecip from Reference Period 2050-2069 30N-30S');
 colormap(ax4, color_map);
+
+Z=abs((ea_temporal_mean_PRECT_60N_60S-ea_temporal_mean_PRECT_ref)./(2*[P_se; P_se(1,:)]));
+[lon_null,lat_null]=find(Z<1);
+lon_null=(lon_null-1)/287*360;
+lat_null=(lat_null-1)/191*180-90;
 
 ax5=subplot(3,3,5); %60N-60S
 ax5.Position = [0.36 0.33 0.28 0.3];
@@ -788,19 +796,19 @@ hold on
 worldmap([-90 90],[-180 180])
 setm(ax5, 'meridianlabel', 'off', 'parallellabel', 'off')
 box on
-%H = ttest2(temporal_mean_TREFHT_R1, temporal_mean_TREFHT_base, 'Dim',3);
-%sH = interp2(lon2,lat,H',slon,slat');
 contourfm(lat,lon2,double(ea_temporal_mean_PRECT_60N_60S')-ea_temporal_mean_PRECT_ref',contours,'LineStyle','none')
-%[II,JJ]=find(~sH');
-%scatterm(slat(JJ),slon(II),1,'k')
+scatterm(lat_null,lon_null,.2,'k','filled');
 load coastlines
 geoshow(coastlat,coastlon,'Color','k')
 caxis([Cmin Cmax])
-% cb=colorbar;
-% ylabel(cb,'\DeltaK')
 hold off
 title('\Deltaprecip from Reference Period 2050-2069 60N-60S');
 colormap(ax5, color_map);
+
+Z=abs((ea_temporal_mean_PRECT_30N-ea_temporal_mean_PRECT_ref)./(2*[P_se; P_se(1,:)]));
+[lon_null,lat_null]=find(Z<1);
+lon_null=(lon_null-1)/287*360;
+lat_null=(lat_null-1)/191*180-90;
 
 ax6=subplot(3,3,6); %30N
 ax6.Position = [0.69 0.33 0.28 0.3];
@@ -808,31 +816,28 @@ hold on
 worldmap([-90 90],[-180 180])
 setm(ax6, 'meridianlabel', 'off', 'parallellabel', 'off')
 box on
-%H = ttest2(temporal_mean_TREFHT_R1, temporal_mean_TREFHT_base, 'Dim',3);
-%sH = interp2(lon2,lat,H',slon,slat');
 contourfm(lat,lon2,double(ea_temporal_mean_PRECT_30N')-ea_temporal_mean_PRECT_ref',contours,'LineStyle','none')
-%[II,JJ]=find(~sH');
-%scatterm(slat(JJ),slon(II),1,'k')
+scatterm(lat_null,lon_null,.2,'k','filled');
 load coastlines
 geoshow(coastlat,coastlon,'Color','k')
 caxis([Cmin Cmax])
-% cb=colorbar;
-% ylabel(cb,'\DeltaK')
 hold off
 title('\Deltaprecip from Reference Period 2050-2069 30N');
 colormap(ax6, color_map);
 
-ax7=subplot(3,3,7); %30N
+Z=abs((ea_temporal_mean_PRECT_60N-ea_temporal_mean_PRECT_ref)./(2*[P_se; P_se(1,:)]));
+[lon_null,lat_null]=find(Z<1);
+lon_null=(lon_null-1)/287*360;
+lat_null=(lat_null-1)/191*180-90;
+
+ax7=subplot(3,3,7); %60N
 ax7.Position = [0.03 0 0.32 0.3];
 hold on
 worldmap([-90 90],[-180 180])
 setm(ax7, 'meridianlabel', 'off', 'parallellabel', 'off')
 box on
-%H = ttest2(temporal_mean_TREFHT_R1, temporal_mean_TREFHT_base, 'Dim',3);
-%sH = interp2(lon2,lat,H',slon,slat');
 contourfm(lat,lon2,double(ea_temporal_mean_PRECT_60N')-ea_temporal_mean_PRECT_ref',contours,'LineStyle','none')
-%[II,JJ]=find(~sH');
-%scatterm(slat(JJ),slon(II),1,'k')
+scatterm(lat_null,lon_null,.2,'k','filled');
 load coastlines
 geoshow(coastlat,coastlon,'Color','k')
 caxis([Cmin Cmax])
@@ -944,7 +949,7 @@ rms_land_T_norm_predicted = squeeze(sqrt(sum(land_weight.*(((mu_TREFHT_predicted
 rms_land_PE_norm_predicted = squeeze(sqrt(sum(land_weight.*(((mu_PRECT_predicted-mu_QFLX_predicted+mean(alpha_PRECT(1:288,:,:)-alpha_QFLX(1:288,:,:),3))./PE_std).^2),[1 2])));
 
 %% Setup optimization (3 ens)
-load('C:\Users\ezrab\Documents\Cornell\Research\Code\SAI_optimization_paper-main\SAI_optimization_paper-main\Delta_T0_cesm2.mat');
+load('Delta_T0_cesm2.mat');
 % order of strategies: EQ, 15N_15S, 30N_30S, 60N_60S, 60N, multi-objective, 30N
 for k = 1:length(varnames)
     eval(['alpha_' varnames{k} '_vec = reshape(mean(alpha_' varnames{k} '(1:288,:,:),3),[55296 1]);'])
@@ -1213,10 +1218,8 @@ for i=0:0.1:1
     [x,fval,exitflag,output]=quadprog(H,f,A,b,Aeq,beq,[],[]);
     % save fraction of injection for each SAI strategy
     if i==0
-        save('SAI_strategy_choices_regional_prec_only_3ens.mat','x');
         opt_frac_TvsP_prec = x;
     elseif i==1
-        save('SAI_strategy_choices_regional_temp_only_3ens.mat','x');
         opt_frac_TvsP_temp = x;
     end
     TvsP_x(:,floor(10*i+1)) = x;
@@ -1229,18 +1232,7 @@ for i=0:0.1:1
     TvsP_temp_residual_rms_arr(floor(10*i+1))=temp_residual_rms;
     prec_residual_rms=sqrt(x'*beta_matrix_opt(55297:110592,:)'*beta_matrix_opt(55297:110592,:)*x);
     TvsP_prec_residual_rms_arr(floor(10*i+1))=prec_residual_rms;
-
-    % land only
-%     beta_matrix_land_opt=beta_matrix.*sqrt(land_weight_vec);
-%     temp_residual_rms_land=sqrt(x'*beta_matrix_land_opt(1:55296,:)'*beta_matrix_land_opt(1:55296,:)*x);
-%     temp_residual_rms_arr_land(floor(10*i+1))=temp_residual_rms_land;
-%     prec_residual_rms_land=sqrt(x'*beta_matrix_land_opt(55297:110592,:)'*beta_matrix_land_opt(55297:110592,:)*x);
-%     prec_residual_rms_arr_land(floor(10*i+1))=prec_residual_rms_land;
 end
-
-% save injection rates and r.m.s.
-writetable(table(TvsP_inj_each_lat_arr),'injection_rates_different_weighting.csv');
-writetable(table([TvsP_temp_residual_rms_arr;TvsP_prec_residual_rms_arr]),'residual_different_weighting.csv')
 
 figure()
 hold on
@@ -1597,12 +1589,6 @@ for i=0:0.1:1
     ub=[];
     % [x,fval]=fmincon(fun,x0,A,b,lb,ub)
     [x,fval,exitflag,output]=quadprog(H,f,A,b,Aeq,beq,[],[]);
-    % save fraction of injection for each SAI strategy
-    if i==0
-        save('SAI_strategy_choices_regional_prec_only_3ens.mat','x');
-    elseif i==1
-        save('SAI_strategy_choices_regional_temp_only_3ens.mat','x');
-    end
     TvsP_norm_x(:,floor(10*i+1)) = x;
     % injection rate for 60N,30N,15N,0N,15S,30S,60S
     inj_each_lat=C*x;
@@ -2044,12 +2030,6 @@ for i=0:0.1:1
     ub=[];
     % [x,fval]=fmincon(fun,x0,A,b,lb,ub)
     [x,fval,exitflag,output]=quadprog(H,f,A,b,Aeq,beq,[],[]);
-    % save fraction of injection for each SAI strategy
-    if i==0
-        save('SAI_strategy_choices_regional_prec_only_2ens.mat','x');
-    elseif i==1
-        save('SAI_strategy_choices_regional_temp_only_2ens.mat','x');
-    end
     % injection rate for 60N,30N,15N,0N,15S,30S,60S
     inj_each_lat=C_noEQ*x;
     inj_each_lat_arr_noEQ(:,floor(10*i+1))=inj_each_lat;
@@ -2114,12 +2094,6 @@ for i=0:0.1:1
     ub=[];
     % [x,fval]=fmincon(fun,x0,A,b,lb,ub)
     [x,fval,exitflag,output]=quadprog(H,f,A,b,Aeq,beq,[],[]);
-    % save fraction of injection for each SAI strategy
-    if i==0
-        save('SAI_strategy_choices_regional_prec_only_2ens.mat','x');
-    elseif i==1
-        save('SAI_strategy_choices_regional_temp_only_2ens.mat','x');
-    end
     landTvslandPE_x(:,floor(10*i+1)) = x;
    % injection rate for 60N,30N,15N,0N,15S,30S,60S
     landT_landPE_inj_each_lat=C*x;
@@ -2369,12 +2343,6 @@ for i=0:0.1:1
     ub=[];
     % [x,fval]=fmincon(fun,x0,A,b,lb,ub)
     [x,fval,exitflag,output]=quadprog(H,f,A,b,Aeq,beq,[],[]);
-    % save fraction of injection for each SAI strategy
-    if i==0
-        save('SAI_strategy_choices_regional_prec_only_2ens.mat','x');
-    elseif i==1
-        save('SAI_strategy_choices_regional_temp_only_2ens.mat','x');
-    end
     landTvslandPE_norm_x(:,floor(10*i+1)) = x;
     % injection rate for 60N,30N,15N,0N,15S,30S,60S
     landT_landPE_norm_inj_each_lat=C*x;
